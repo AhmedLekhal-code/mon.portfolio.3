@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accueil — Ahmed Lekhal</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <h1 class="main-title"> LEKHAL AHMED </h1>
+
+  <section class="section-grid">
+    <div class="card">
+      <figure>
+        <img src="images/profile.jpg" alt="Accueil">
+      </figure>
+      <div class="card-content">
+        <h2>Accueil</h2>
+        <p>Présentation de mon parcours, mes intérêts et ma vision.</p>
+        <a href="index.html" class="btn">Voir Accueil</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <figure>
+        <img src="images/projet1.jpg" alt="Projets">
+      </figure>
+      <div class="card-content">
+        <h2>Projets</h2>
+        <p>Mes projets sur la décarbonation et la transition écologique.</p>
+        <a href="projets.html" class="btn">Voir Projets</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <figure>
+        <img src="images/projet2.jpg" alt="Contact">
+      </figure>
+      <div class="card-content">
+        <h2>Contact</h2>
+        <p>Envie de discuter ? Contactez-moi directement par mail.</p>
+        <a href="contact.html" class="btn">Me Contacter</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2025 Ahmed Lekhal</p>
+  </footer>
+
+  <!-- ✅ SCRIPT pour apparition des cartes au scroll -->
+  <script>
+    const cards = document.querySelectorAll('.card');
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fade-in');
+        }
+      });
+    }, {
+      threshold: 0.3
+    });
+
+    cards.forEach(card => observer.observe(card));
+  </script>
+
+</body>
+</html>

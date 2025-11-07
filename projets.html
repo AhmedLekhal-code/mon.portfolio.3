@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projets — Ahmed Lekhal</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <h1 class="main-title">Mes Projets</h1>
+
+  <section class="section-grid">
+    <div class="card">
+      <figure>
+        <img src="images/projet1.jpg" alt="Décarbonation">
+      </figure>
+      <div class="card-content">
+        <h2>Décarbonation</h2>
+        <p>Réduction des émissions industrielles par des solutions concrètes.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <figure>
+        <img src="images/projet2.jpg" alt="Transition écologique">
+      </figure>
+      <div class="card-content">
+        <h2>Transition écologique</h2>
+        <p>Recherche sur les matériaux durables et les processus écoresponsables.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <figure>
+        <img src="images/projet3.jpg" alt="Travail en équipe">
+      </figure>
+      <div class="card-content">
+        <h2>Travail en équipe</h2>
+        <p>Collaboration universitaire autour d’innovations vertes et durables.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2025 Ahmed Lekhal</p>
+  </footer>
+
+  <script>
+    const cards = document.querySelectorAll('.card');
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fade-in');
+        }
+      });
+    }, { threshold: 0.3 });
+
+    cards.forEach(card => observer.observe(card));
+  </script>
+
+</body>
+</html>
