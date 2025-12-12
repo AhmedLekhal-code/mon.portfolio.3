@@ -1,0 +1,63 @@
+/* ======================================= */
+/* Séance 10 : Mobile First - Cartes empilées */
+/* ======================================= */
+
+#liste-projets {
+    /* S9 : Conteneur Grid pour les cartes */
+    display: grid;
+    /* Une seule colonne sur mobile */
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-top: 2rem;
+}
+
+#liste-projets section {
+    background-color: var(--color-bg-main); 
+    padding: 1.5rem;
+    border: 1px solid var(--color-text-dark);
+    border-left: 5px solid var(--color-accent); /* Bordure d'accent (S7) */
+    border-radius: 8px; 
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+/* S7 : Effet d'interaction simple sur la carte au survol */
+#liste-projets section:hover {
+    transform: translateY(-5px); 
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#liste-projets h2 {
+    color: var(--color-text-dark); /* Titre de carte en couleur de texte */
+    border-bottom: 2px dashed var(--color-accent);
+    padding-bottom: 5px;
+}
+
+/* S6 : Utilisation de Flexbox pour aligner l'image et le contenu dans la carte */
+#liste-projets section {
+    display: flex;
+    flex-direction: column; /* Par défaut, vertical sur mobile */
+}
+#liste-projets section figure {
+    order: -1; /* Placer l'image en haut sur mobile */
+}
+
+
+/* ======================================= */
+/* Séance 10 : Media Query pour Desktop */
+/* ======================================= */
+@media (min-width: 768px) {
+    
+    /* S9 : Deux colonnes pour les projets sur tablette/petit desktop */
+    #liste-projets {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+@media (min-width: 1200px) {
+    
+    /* S9 : Trois colonnes pour les projets sur grand desktop */
+    #liste-projets {
+        grid-template-columns: repeat(3, 1fr); 
+    }
+}

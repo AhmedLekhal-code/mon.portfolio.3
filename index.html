@@ -1,70 +1,55 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Accueil — Ahmed Lekhal</title>
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lekhal Ahmed - Accueil</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/accueil.css">
 </head>
 <body>
+    <header id="haut" aria-label="En-tête du site">
+        <h1>Lekhal Ahmed</h1>
 
-  <h1 class="main-title"> LEKHAL AHMED </h1>
+        <nav aria-label="Navigation principale">
+            <ul>
+                <li><a href="index.html" aria-label="Aller à l'accueil">Accueil</a></li>
+                <li><a href="projets.html" aria-label="Voir mes projets">Projets</a></li>
+                <li><a href="contact.html" aria-label="Me contacter">Contact</a></li>
+            </ul>
+        </nav>
+        <hr>
+    </header>
 
-  <section class="section-grid">
-    <div class="card">
-      <figure>
-        <img src="images/profile.jpg" alt="Accueil">
-      </figure>
-      <div class="card-content">
-        <h2>Accueil</h2>
-        <p>Présentation de mon parcours, mes intérêts et ma vision.</p>
-        <a href="index.html" class="btn">Voir Accueil</a>
-      </div>
-    </div>
+    <main>
+        <section id="presentation" aria-labelledby="titre-presentation">
+            <h2 id="titre-presentation">Présentation et Objectifs</h2>
+            <p>
+                Bonjour ! Je suis un étudiant en première année de Licence Informatique. Ce site sert de portfolio pour présenter les concepts fondamentaux que j'ai appris en développement web.
+            </p>
+            <p>
+                Je me concentre sur l'apprentissage des bonnes pratiques, de la <strong role="strong">sémantique HTML</strong> et de l'accessibilité.
+            </p>
 
-    <div class="card">
-      <figure>
-        <img src="images/projet1.jpg" alt="Projets">
-      </figure>
-      <div class="card-content">
-        <h2>Projets</h2>
-        <p>Mes projets sur la décarbonation et la transition écologique.</p>
-        <a href="projets.html" class="btn">Voir Projets</a>
-      </div>
-    </div>
+            <figure role="img" aria-labelledby="figcaption-accueil-photo">
+                <img src="images/accueil-photo.jpg" alt="Illustration des concepts de codage web">
+                <figcaption id="figcaption-accueil-photo">Apprendre les bases du développement web : HTML et CSS.</figcaption>
+            </figure>
+        </section>
 
-    <div class="card">
-      <figure>
-        <img src="images/projet2.jpg" alt="Contact">
-      </figure>
-      <div class="card-content">
-        <h2>Contact</h2>
-        <p>Envie de discuter ? Contactez-moi directement par mail.</p>
-        <a href="contact.html" class="btn">Me Contacter</a>
-      </div>
-    </div>
-  </section>
+        <section id="ressources" aria-labelledby="titre-ressources">
+            <h2 id="titre-ressources">Ressources Utiles</h2>
+            <p>Voici quelques liens de ressources que j'utilise :</p>
+            <ul>
+                <li><a href="https://www.univ-littoral.fr/" target="_blank">Site de l'Université du Littoral</a></li>
+                <li><a href="https://news.google.com/home?hl=fr&gl=FR&ceid=FR%3Afr" target="_blank">Google Actualités (France)</a></li>
+            </ul>
+        </section>
+    </main>
 
-  <footer class="footer">
-    <p>&copy; 2025 Ahmed Lekhal</p>
-  </footer>
-
-  <!-- ✅ SCRIPT pour apparition des cartes au scroll -->
-  <script>
-    const cards = document.querySelectorAll('.card');
-
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('fade-in');
-        }
-      });
-    }, {
-      threshold: 0.3
-    });
-
-    cards.forEach(card => observer.observe(card));
-  </script>
-
+    <footer aria-label="Pied de page du site" role="contentinfo">
+        <p>&copy; 2024 Mon Portfolio L1 Info. Tous droits réservés.</p>
+        <p><a href="#haut">Retour en haut de page</a></p>
+    </footer>
 </body>
 </html>

@@ -1,64 +1,92 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projets — Ahmed Lekhal</title>
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Portfolio L1 Info - Projets</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/projets.css">
 </head>
 <body>
+    <header id="haut" aria-label="En-tête du site">
+        <h1>Mes Projets de L1 Informatique</h1>
+        <nav aria-label="Navigation principale">
+            <ul>
+                <li><a href="index.html" aria-label="Aller à l'accueil">Accueil</a></li>
+                <li><a href="projets.html" aria-label="Voir mes projets">Projets</a></li>
+                <li><a href="contact.html" aria-label="Me contacter">Contact</a></li>
+            </ul>
+        </nav>
+        <hr>
+    </header>
 
-  <h1 class="main-title">Mes Projets</h1>
+    <main>
+        <div id="liste-projets"> 
+            
+            <section aria-labelledby="titre-projet-1">
+                <h2 id="titre-projet-1">Projet 1 : Jeu en C (Démineur Simplifié)</h2>
+                
+                <figure role="img" aria-labelledby="titre-projet-1">
+                    <img src="images/projet1.jpg" alt="Image d'un écran de démineur basique">
+                    <figcaption>Interface en console du jeu.</figcaption>
+                </figure>
+                
+                <h3>Objectifs du Projet</h3>
+                <ol> <li>Apprendre la syntaxe de base du langage C.</li>
+                    <li>Maîtriser les boucles (`for`, `while`) et les conditions (`if/else`).</li>
+                    <li>Utiliser les tableaux pour représenter la grille de jeu.</li>
+                </ol>
+                
+                <p>
+                    Ce projet a été ma première immersion dans la programmation impérative. J'ai acquis de solides bases en gestion de la mémoire et en algorithmique.
+                </p>
+            </section>
+            
+            <section aria-labelledby="titre-projet-2">
+                <h2 id="titre-projet-2">Projet 2 : Système de Gestion de Bibliothèque (SQL)</h2>
+                
+                <figure role="img" aria-labelledby="titre-projet-2">
+                    <img src="images/projet2.jpg" alt="Diagramme de relations entre tables de base de données">
+                    <figcaption>Schéma des relations entre les tables (livres, auteurs, adhérents).</figcaption>
+                </figure>
 
-  <section class="section-grid">
-    <div class="card">
-      <figure>
-        <img src="images/projet1.jpg" alt="Décarbonation">
-      </figure>
-      <div class="card-content">
-        <h2>Décarbonation</h2>
-        <p>Réduction des émissions industrielles par des solutions concrètes.</p>
-      </div>
-    </div>
+                <h3>Compétences Développées</h3>
+                <ul> <li>Conception d'un modèle relationnel (MCD/MLD).</li>
+                    <li>Utilisation des commandes <strong role="strong">CRUD</strong> (Create, Read, Update, Delete).</li>
+                    <li>Écriture de requêtes complexes avec jointures.</li>
+                </ul>
 
-    <div class="card">
-      <figure>
-        <img src="images/projet2.jpg" alt="Transition écologique">
-      </figure>
-      <div class="card-content">
-        <h2>Transition écologique</h2>
-        <p>Recherche sur les matériaux durables et les processus écoresponsables.</p>
-      </div>
-    </div>
+                <p>
+                    L'objectif était de créer la structure complète d'une base de données pour gérer les prêts et les retours de livres.
+                </p>
+            </section>
+            
+            <section aria-labelledby="titre-projet-3">
+                <h2 id="titre-projet-3">Projet 3 : Scripts de Maintenance Système (Shell)</h2>
+                
+                <figure role="img" aria-labelledby="titre-projet-3">
+                    <img src="images/projet3.jpg" alt="Lignes de commandes sur un terminal Linux">
+                    <figcaption>Exécution d'un script d'automatisation des tâches de sauvegarde.</figcaption>
+                </figure>
 
-    <div class="card">
-      <figure>
-        <img src="images/projet3.jpg" alt="Travail en équipe">
-      </figure>
-      <div class="card-content">
-        <h2>Travail en équipe</h2>
-        <p>Collaboration universitaire autour d’innovations vertes et durables.</p>
-      </div>
-    </div>
-  </section>
+                <h3>Exemples de Scripts</h3>
+                <dl> <dt>Script de Sauvegarde</dt>
+                    <dd>Compresse automatiquement des dossiers importants une fois par jour.</dd>
+                    <dt>Script de Nettoyage</dt>
+                    <dd>Identifie et supprime les fichiers temporaires inutiles pour optimiser l'espace.</dd>
+                </dl>
+                
+                <p>
+                    Ce module m'a appris l'importance de l'automatisation des tâches répétitives sur un système d'exploitation de type Unix/Linux.
+                </p>
+            </section>
 
-  <footer class="footer">
-    <p>&copy; 2025 Ahmed Lekhal</p>
-  </footer>
+        </div>
+    </main>
 
-  <script>
-    const cards = document.querySelectorAll('.card');
-
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('fade-in');
-        }
-      });
-    }, { threshold: 0.3 });
-
-    cards.forEach(card => observer.observe(card));
-  </script>
-
+    <footer aria-label="Pied de page du site" role="contentinfo">
+        <p>&copy; 2024 Mon Portfolio L1 Info. Tous droits réservés.</p>
+        <p><a href="#haut">Retour en haut de page</a></p>
+    </footer>
 </body>
 </html>

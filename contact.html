@@ -1,50 +1,47 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact — Ahmed Lekhal</title>
-  <link rel="stylesheet" href="css/style.css">
-</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lekhal Ahmed - Contact</title>
+    <link rel="stylesheet" href="css/style.css">
+    </head>
 <body>
+    <header id="haut" aria-label="En-tête du site">
+        <h1>Contactez-moi</h1>
+        <nav aria-label="Navigation principale">
+            <ul>
+                <li><a href="index.html" aria-label="Aller à l'accueil">Accueil</a></li>
+                <li><a href="projets.html" aria-label="Voir mes projets">Projets</a></li>
+                <li><a href="contact.html" aria-label="Me contacter">Contact</a></li>
+            </ul>
+        </nav>
+        <hr>
+    </header>
 
-  <h1 class="main-title">Contact</h1>
+    <main>
+        <address role="contentinfo" aria-labelledby="titre-contact">
+            <h2 id="titre-contact">Mes Coordonnées</h2>
+            <dl> <dt>Email</dt>
+                <dd><a href="mailto:exceptionnelseek@gmail.com">exceptionnelseek@gmail.com</a></dd>
+                <dt>Téléphone</dt>
+                <dd>06 00 00 00 00</dd>
+                <dt>Localisation</dt>
+                <dd>Lille, France</dd>
+            </dl>
+        </address>
 
-  <section class="section-grid">
-    <div class="card">
-      <figure>
-        <img src="images/profile.jpg" alt="Contact">
-      </figure>
-      <div class="card-content">
-        <h2>Me contacter</h2>
-        <p>Vous avez une question, un projet ou une opportunité ? Envoyez-moi un message :</p>
-        <form action="mailto:ahmed.lekhal@example.com" method="post" enctype="text/plain" class="contact-form">
-          <input type="text" name="name" placeholder="Votre nom" required>
-          <input type="email" name="email" placeholder="Votre email" required>
-          <textarea name="message" rows="4" placeholder="Votre message" required></textarea>
-          <button type="submit" class="btn">Envoyer</button>
-        </form>
-      </div>
-    </div>
-  </section>
+        <section>
+            <h2>Laissez-moi un message</h2>
+            <p>
+                Vous pouvez me contacter directement par email ou téléphone.
+            </p>
+        </section>
+    </main>
 
-  <footer class="footer">
-    <p>&copy; 2025 Ahmed Lekhal</p>
-  </footer>
-
-  <script>
-    const cards = document.querySelectorAll('.card');
-
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('fade-in');
-        }
-      });
-    }, { threshold: 0.3 });
-
-    cards.forEach(card => observer.observe(card));
-  </script>
-
+    <footer aria-label="Pied de page du site" role="contentinfo">
+        <p>&copy; 2024 Mon Portfolio L1 Info. Tous droits réservés.</p>
+        <p><a href="#haut">Retour en haut de page</a></p>
+    </footer>
 </body>
 </html>

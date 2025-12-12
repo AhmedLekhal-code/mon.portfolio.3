@@ -1,0 +1,70 @@
+/* ======================================= */
+/* Séance 10 : Mobile First - Styles par défaut */
+/* ======================================= */
+/* Sur mobile, les éléments s'empilent naturellement (100%) */
+
+#presentation {
+    border: 1px solid var(--color-text-dark);
+    padding: 1rem;
+    border-radius: 5px;
+}
+#presentation figure {
+    margin: 1rem 0;
+    /* Centrer l'image sur mobile */
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ======================================= */
+/* Séance 10 : Media Query pour Desktop */
+/* ======================================= */
+@media (min-width: 992px) {
+
+    /* S9 : Utilisation de CSS Grid (Nouveau Layout) */
+    #presentation {
+        display: grid; 
+        /* Définition d'une grille 2 colonnes, 3 lignes nommées */
+        grid-template-columns: 2fr 1fr; /* 2/3 pour le texte, 1/3 pour l'image */
+        grid-template-rows: auto auto 1fr; /* Lignes pour Titre, Paragraphes, et reste */
+        gap: 20px 40px; /* Espacement horizontal et vertical */
+        
+        padding: 30px;
+        border: 2px solid var(--color-text-dark); /* Bordure double */
+    }
+
+    /* Le titre H2 prend toute la largeur (les deux colonnes) */
+    #presentation h2 {
+        grid-column: 1 / 3; 
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+
+    /* L'image se positionne dans la 2ème colonne et s'étend */
+    #presentation figure {
+        grid-column: 2;
+        grid-row: 2 / 4; /* S'étend de la ligne 2 à 4 */
+        margin: 0;
+        align-self: start; /* Alignée en haut */
+        box-shadow: 5px 5px 0 var(--color-accent); /* Ombre rouge (S7) */
+        border: 2px solid var(--color-accent);
+    }
+    
+    /* Le premier paragraphe commence sous le titre et dans la 1ère colonne */
+    #presentation p:first-of-type {
+        grid-column: 1;
+        grid-row: 2;
+    }
+    
+    /* Le second paragraphe se place ensuite */
+    #presentation p:nth-of-type(2) {
+        grid-column: 1;
+        grid-row: 3;
+    }
+
+    /* La section des ressources est placée en bas de la première colonne */
+    #ressources {
+        grid-column: 1;
+        grid-row: 4;
+    }
+}

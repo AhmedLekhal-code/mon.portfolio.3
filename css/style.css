@@ -1,141 +1,130 @@
-/* Reset */
+/* ======================================= */
+/* Séance 11 : Variables CSS Sémantiques (Minimaliste Foncé) */
+/* ======================================= */
+:root {
+    /* Nouvelle Palette pour un Design Unique */
+    --color-bg-main: #f0f0f0;       /* Fond Principal Clair (Blanc cassé) */
+    --color-bg-header: #333333;     /* Fond Sombre pour le Header et Footer */
+    --color-accent: #e53935;        /* Rouge Vif pour l'Accent (Titres, Liens, Bords) */
+    --color-text-dark: #222222;     /* Texte Principal (Noir très foncé) */
+    --color-text-light: #ffffff;    /* Texte sur Fond Sombre */
+
+    /* Espacements et Typographie */
+    --space-unit: 1rem;
+    --font-family-sans: 'Verdana', sans-serif;
+}
+
+/* ======================================= */
+/* Séance 6 : Box Model et Reset */
+/* ======================================= */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    box-sizing: border-box; 
+    margin: 0;
+    padding: 0;
 }
 
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background: #f7faff;
-  color: #333;
-  line-height: 1.6;
-  overflow-x: hidden;
+    font-family: var(--font-family-sans);
+    color: var(--color-text-dark);
+    background-color: var(--color-bg-main);
+    line-height: 1.6;
 }
 
-/* TITRE PRINCIPAL */
-.main-title {
-  text-align: center;
-  font-size: 3.5rem;
-  margin-top: 3rem;
-  position: relative;
-  animation: fadeIn 1s ease-out;
+main {
+    padding: var(--space-unit) 10%; /* Nouvelle marge latérale pour l'espace */
+    min-height: 80vh; 
+    max-width: 1200px; /* Limiter la largeur sur très grands écrans */
+    margin: 0 auto;
 }
 
-.main-title::after {
-  content: '';
-  display: block;
-  width: 120px;
-  height: 5px;
-  margin: 1rem auto 0;
-  background: linear-gradient(to right, #00c6ff, #0072ff);
-  border-radius: 10px;
+h1, h2, h3 {
+    color: var(--color-accent);
+    margin-bottom: 0.5rem;
+    /* S10 : Typographie Fluide pour tous les titres */
+    font-size: clamp(1.5rem, 1rem + 1vw, 2.5rem); 
 }
 
-/* SECTIONS CARDS */
-.section-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  padding: 4rem 2rem;
-  max-width: 1200px;
-  margin: auto;
+/* S7 : Effet d'interaction simple et transition */
+a {
+    color: var(--color-accent);
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-.card {
-  background: white;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-  transition: transform 0.5s, background-position 0.5s;
-  transform: translateY(50px);
-  opacity: 0;
-  position: relative;
+a:hover {
+    color: var(--color-text-dark);
 }
 
-.card.fade-in {
-  transform: translateY(0);
-  opacity: 1;
-  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+/* ======================================= */
+/* Header, Nav, et Flexbox (Séance 6) */
+/* ======================================= */
+header {
+    background-color: var(--color-bg-header);
+    color: var(--color-text-light);
+    padding: var(--space-unit) 10%;
+    border-bottom: 5px solid var(--color-accent); /* Bande rouge distinctive */
 }
 
-.card:hover {
-  transform: translateY(-10px);
-  background-position: right center;
+header h1 {
+    color: var(--color-text-light);
+    text-align: center;
+    margin-bottom: 0.5rem;
 }
 
-.card:active {
-  background-color: #f0f0f0;
+nav ul {
+    /* S6 : Flexbox pour la navigation */
+    display: flex; 
+    justify-content: center; 
+    list-style: none; 
+    padding: 0;
+    margin: 0.5rem 0 0 0;
+    gap: 25px; 
 }
 
-.card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 6px;
-  background: linear-gradient(to right, #ff6a00, #ee0979);
+/* Sélecteur combiné + Pseudo-classe (S4/S7) : Style des liens du menu */
+nav ul > li a {
+    font-weight: bold;
+    color: var(--color-text-light); /* Liens en blanc */
+    padding: 5px 10px;
+    border-bottom: 2px solid transparent; /* Bordure invisible */
+    transition: border-bottom 0.3s ease;
 }
 
-.card-content {
-  padding: 1.5rem;
-  text-align: center;
+nav ul > li a:hover {
+    color: var(--color-text-light);
+    border-bottom: 2px solid var(--color-accent); /* La bordure rouge apparaît au survol */
 }
 
-.card-content h2 {
-  margin-bottom: 1rem;
-  font-size: 1.8rem;
+hr {
+    border: none;
+    height: 1px;
+    background-color: var(--color-text-faded); /* Utilisé pour les séparateurs dans le main */
+    margin: 1.5rem 0;
 }
 
-.card-content p {
-  color: #555;
-}
-
-figure {
-  margin: 0;
-}
-
-figure img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* BOUTON GÉNÉRIQUE */
-.btn {
-  display: inline-block;
-  margin-top: 1rem;
-  padding: 0.7rem 1.5rem;
-  background: linear-gradient(to right, #0072ff, #00c6ff);
-  color: #fff;
-  border-radius: 25px;
-  font-weight: bold;
-  transition: background-position 0.5s;
-  background-size: 200%;
-  background-position: left;
-}
-
-.btn:hover {
-  background-position: right;
-}
-
+/* ======================================= */
 /* Footer */
-.footer {
-  text-align: center;
-  padding: 2rem;
-  font-size: 0.9rem;
-  color: #777;
+/* ======================================= */
+footer {
+    background-color: var(--color-bg-header);
+    color: var(--color-text-light);
+    text-align: center;
+    padding: 0.8rem;
+    margin-top: 2rem;
 }
 
-/* ANIMATION fadeIn */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+footer a {
+    color: var(--color-accent);
+}
+
+/* S4 : Sélecteur de type */
+strong {
+    color: var(--color-accent);
+}
+
+/* S10 : Médias Fluides */
+img, video {
+    max-width: 100%;
+    height: auto;
+    display: block; 
 }
